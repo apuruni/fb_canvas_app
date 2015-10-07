@@ -22,18 +22,22 @@
         }
       }
 
-      FB.getLoginStatus(function(response) {
-        // Check login status on load, and if the user is
-        // already logged in, go directly to the welcome message.
-        if (response.status == 'connected') {
-          onLogin(response);
-        } else {
-          // Otherwise, show Login dialog first.
-          FB.login(function(response) {
+      function checkLoginState() {
+        FB.getLoginStatus(function(response) {
+          // Check login status on load, and if the user is
+          // already logged in, go directly to the welcome message.
+          if (response.status == 'connected') {
             onLogin(response);
-          }, {scope: 'user_friends, email'});
-        }
-      });
+          } else {
+            // Otherwise, show Login dialog first.
+            FB.login(function(response) {
+              onLogin(response);
+            }, {scope: 'user_friends, email'});
+          }
+        });
+      }
+
+      checkLoginState();
     };
 
     (function(d, s, id){
@@ -47,7 +51,6 @@
 
    <h1>Kun's Canvas App</h1>
    <h2 id="fb-welcome"></h2>
-   <fb:login-button scope="public_profile,email" onlogin="onLogin();">
    </fb:login-button>
 </body>
 </html>
