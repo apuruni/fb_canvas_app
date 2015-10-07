@@ -46,7 +46,8 @@
    </script>
 
    <h1>Kun's Canvas App</h1>
-   <h2 id="fb-welcome">Kun's Canvas App</h2>
-
+   <h2 id="fb-welcome"></h2>
+   <fb:login-button scope="public_profile,email" onlogin="onLogin();">
+   </fb:login-button>
 </body>
 </html>
