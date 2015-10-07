@@ -45,7 +45,8 @@
      }(document, 'script', 'facebook-jssdk'));
    </script>
 
-   <h1 id="fb-welcome">Kun's Canvas App</h1>
+   <h1>Kun's Canvas App</h1>
+   <h2 id="fb-welcome">Kun's Canvas App</h2>
 
 </body>
 </html>
