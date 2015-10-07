@@ -51,6 +51,7 @@
 
    <h1>Kun's Canvas App</h1>
    <h2 id="fb-welcome"></h2>
+   <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
    </fb:login-button>
-</body>
+ </body>
 </html>
