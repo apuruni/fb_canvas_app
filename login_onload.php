@@ -11,6 +11,8 @@
         FB.api('/me?fields=first_name', function(data) {
           var welcomeBlock = document.getElementById('fb-welcome');
           welcomeBlock.innerHTML = 'Hello, ' + data.first_name + '!';
+
+          document.getElementById('fb-logged-in-only').style.display="block";
         });
       }
     }
@@ -51,5 +53,10 @@
 
    <h1>Kun's Canvas App</h1>
    <h2 id="fb-welcome"></h2>
+   <div id="fb-logged-in-only" style="display: none">
+    <ui>
+      <li><a href="token_gen_long_lived_token.php">Get Long-lived-token</a></li>
+    </ui>
+  </div>
  </body>
 </html>
