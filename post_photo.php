@@ -21,7 +21,7 @@ $data = [
 
 try {
   // Returns a `Facebook\FacebookResponse` object
-  $response = $fb->post('/me/photos', $data, 'EAAZA2BpuLIk0BAMJt6Mn7OWdqlR9cZCzEJsFLH3ZAuO0z0uBvwUUUZB7F0FqT6PIZBhOafnruLihP9TMJWyGlFOwD1ZAaFnj4SU0qlw2JwMyryki1bTXwdtZBRpn7QB34ibYhyTgCZBIxZCyTrd3klESmxAZC77izcodfuzu659B0y791Lv7XOoqLVuPYWFK8mVFfQYY54l4eECwZDZD');
+  $response = $fb->post('/me/photos', $data, 'EAAZA2BpuLIk0BAEAHlRAL7mSr398m9LmgQZAKMmhZA878ZAiLsH8DRZBM5WkcYcFxLa4rfQwKaeWbpa7ceCtVrrheX5tJ9lviaGqwhR928E4QpJeF7AoZCHsZCHjy1ZAMq7Jt4tqFpJZBNv6ZAigrgLxsv7jF5LKK28Bay7shcAydVqYHJj7ZBSjwBX3zmPjrHaxs4OfduY1CxMNwZDZD');
 } catch(Facebook\Exceptions\FacebookResponseException $e) {
   echo 'Graph returned an error: ' . $e->getMessage()  . "\n";
   exit;
