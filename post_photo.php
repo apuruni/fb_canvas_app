@@ -7,13 +7,15 @@ include 'app-setting.php';
 session_start();
 
 $fb = new Facebook\Facebook($app_params);
-$photo_file_path = __DIR__ .'/img/pic_720p.png';
+// $photo_file_path = __DIR__ .'/img/pic_720p.png';
+$photo_file_path = __DIR__ .'/img/Share01.jpg';
 
 echo 'Sharing photo path: '. $photo_file_path . "\n";
 
 
 $data = [
-  'caption' => 'Caption of the photo. #TestShare',
+  // 'caption' => 'Caption of the photo. #TestShare',
+  'caption' => 'Beautiful sea! #TestShare',
   'source' => $fb->fileToUpload($photo_file_path),
 ];
 
