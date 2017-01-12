@@ -7,7 +7,7 @@ include 'app-setting.php';
 session_start();
 
 $fb = new Facebook\Facebook($app_params);
-$photo_file_path = dirname(__DIR__).'/img/pic_720p.png';
+$photo_file_path = __DIR__ .'/img/pic_720p.png';
 
 echo 'Sharing photo path: '. $photo_file_path;
 
