@@ -7,29 +7,29 @@ include 'app-setting.php';
 session_start();
 
 $fb = new Facebook\Facebook($app_params);
+$photo_file_path = dirname(__DIR__).'/img/pic_720p.png';
 
-$helper = $fb->getRedirectLoginHelper();
+echo 'Sharing photo path: '. $photo_file_path;
+
+
+$data = [
+  'message' => 'My awesome photo upload example.',
+  'source' => $fb->fileToUpload($photo_file_path),
+];
 
 try {
-  $accessToken = $helper->getAccessToken();
+  // Returns a `Facebook\FacebookResponse` object
+  $response = $fb->post('/me/photos', $data, 'EAAZA2BpuLIk0BAKo8AEWbWKcPMpiuYftA8t5HyE7lAbmZATkqN2OuZATGZCaUkS07ZBPDvswUjsqlrD4YPg7ZBXgXd149n3FKGqZAkzuBZA94R9bpz6evKzZCEo1grqGwBiY9rGhXb5DZCcD1MlwYepKH7zieq07kyNLFlTdq8n94fcy2U19ZAZCuEH1dVRjHzgyTNDMbzF6vij0RAZDZD');
 } catch(Facebook\Exceptions\FacebookResponseException $e) {
-  // When Graph returns an error
   echo 'Graph returned an error: ' . $e->getMessage();
   exit;
 } catch(Facebook\Exceptions\FacebookSDKException $e) {
-  // When validation fails or other local issues
   echo 'Facebook SDK returned an error: ' . $e->getMessage();
   exit;
 }
 
-if (isset($accessToken)) {
-  // Logged in!
-  $_SESSION['facebook_access_token'] = (string) $accessToken;
+$graphNode = $response->getGraphNode();
 
-  // Now you can redirect to another page and use the
-  // access token from $_SESSION['facebook_access_token']
-  echo 'facebook_access_token=' . $_SESSION['facebook_access_token'];
-  echo '<br/>';
-}
+echo 'Photo ID: ' . $graphNode['id'];
 ?>
 
