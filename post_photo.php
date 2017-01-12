@@ -26,7 +26,10 @@ try {
 } catch(Facebook\Exceptions\FacebookSDKException $e) {
   echo 'Facebook SDK returned an error: ' . $e->getMessage();
   exit;
+} catch (Exception $e) {
+  echo 'error: ' . $e->getMessage();
 }
+
 
 $graphNode = $response->getGraphNode();
 
