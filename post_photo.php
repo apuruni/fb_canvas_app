@@ -13,7 +13,7 @@ echo 'Sharing photo path: '. $photo_file_path . "\n";
 
 
 $data = [
-  'message' => 'My awesome photo upload example.',
+  'caption' => 'Caption of the photo. #TestShare',
   'source' => $fb->fileToUpload($photo_file_path),
 ];
 
