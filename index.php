@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Test App</title>
+  <title>FB PHP Test App</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </head>
 <body>
@@ -20,7 +20,5 @@
       <li><a href="game_requests.php">Game Requests</a></li>
     </ui>
   </div>
-
-
 </body>
 </html>
