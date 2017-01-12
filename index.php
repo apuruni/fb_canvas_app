@@ -20,5 +20,12 @@
       <li><a href="game_requests.php">Game Requests</a></li>
     </ui>
   </div>
+
+  <h2>Photos</h2>
+  <div>
+    <ui>
+      <li><a href="post_photo.php">Post Photo</a></li>
+    </ui>
+  </div>
 </body>
 </html>
